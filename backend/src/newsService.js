@@ -13,7 +13,7 @@ const fetchNews = async () => {
         from: dateStr,
         sortBy: 'popularity',
         apiKey: process.env.NEWS_API_KEY,
-        pageSize: 5 // Giới hạn lấy 5 bài viết mỗi lần chạy để test tránh vượt mức API
+        pageSize: 20 // Tăng lên 20 bài báo mỗi lần quét để làm giàu data Backend
       }
     });
 

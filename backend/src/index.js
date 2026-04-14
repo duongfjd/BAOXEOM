@@ -92,9 +92,9 @@ const startSystem = async () => {
   // Chạy luôn luồng quét tin 1 lần
   await processNews();
 
-  // Cấu hình chạy định kỳ mỗi 4 tiếng
-  console.log('⏰ Cron job quét tin đã đặt ngưỡng 4 tiếng/lần.');
-  cron.schedule('0 */4 * * *', () => {
+  // Cấu hình chạy định kỳ mỗi 1 tiếng
+  console.log('⏰ Cron job quét tin đã đặt ngưỡng 1 tiếng/lần.');
+  cron.schedule('0 * * * *', () => {
     processNews();
   });
 };
