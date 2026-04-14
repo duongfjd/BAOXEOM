@@ -1,0 +1,385 @@
+{
+"status": "ok",
+"totalResults": 27,
+-"articles": [
+-{
+-"source": {
+"id": null,
+"name": "9to5Mac"
+},
+"author": "Marcus Mendes",
+"title": "Dope Thief’s Brian Tyree Henry joins upcoming Apple Original Films feature",
+"description": "Apple TV confirmed today that Brian Tyree Henry, who recently starred alongside Wagner Moura (The Secret Agent, Elite Squad) on Dope Thief, is joining a new feature film from Apple Original Films. Here are the details.\n\n\n\n more…",
+"url": "https://9to5mac.com/2026/04/13/dope-thiefs-brian-tyree-henry-joins-upcoming-apple-original-films-feature/",
+"urlToImage": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/04/dope-thief.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+"publishedAt": "2026-04-14T00:23:35Z",
+"content": "Apple TV confirmed today that Brian Tyree Henry, who recently starred alongside Wagner Moura (The Secret Agent, Elite Squad) on Dope Thief, is joining a new feature film from Apple Original Films. He… [+1544 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "9to5Mac"
+},
+"author": "Chance Miller",
+"title": "Never lose anything again with these Find My accessories",
+"description": "There’s a robust ecosystem of Find My accessories on the market nowadays, across various different designs and form factors. Here are some of the most popular options. \n\n\n\n more…",
+"url": "https://9to5mac.com/2026/04/13/best-find-my-accessories/",
+"urlToImage": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2022/08/Apple-Find-My-sound-alert-iOS-16.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+"publishedAt": "2026-04-14T00:46:48Z",
+"content": "Theres a robust ecosystem of Find My accessories on the market nowadays, across various different designs and form factors. Here are some of the most popular options. \r\nUpdated April 13, 2026: Added … [+4367 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Ifanr.com"
+},
+"author": "马扶摇",
+"title": "智能眼镜「iPhone 时刻」终将到来，因为苹果亲自下场了",
+"description": "帅是第一生产力#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+"url": "https://www.ifanr.com/1661905",
+"urlToImage": "https://s3.ifanr.com/wp-content/uploads/2026/04/banner-16to9-1.jpg",
+"publishedAt": "2026-04-14T01:00:23Z",
+"content": "Meta Ray-Ban Meta Oakley Meta \r\nMeta + + + 2025 \r\n·\r\n N50 2026 2027 2027 \r\nGlass Almanac\r\nN50 Vision Pro VPGVision Products Group VPG\r\n· N50 \r\nMeta Ray-Ban Forbes\r\nN50 Pro Siri \r\n· N50 \r\n Apple Watch… [+572 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Ifanr.com"
+},
+"author": "Shawn Rain",
+"title": "早报｜iOS 26.5 Beta 2曝光地图广告机制/华为公布大阔折叠外观/不到两天，奥特曼住所再遭袭击",
+"description": "· OpenAI 伦敦「新家」定档：首个永久办公室明年见\n· 人形机器人「上岗」景区，智元远征 A3 首批商用交付完成\n· 华为 Pura X Max 外观曝光#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+"url": "https://www.ifanr.com/1662060",
+"urlToImage": "https://s3.ifanr.com/images/ep/cover-images/yang_guang_pao_bu_ren_cover.jpg",
+"publishedAt": "2026-04-14T00:21:46Z",
+"content": "iOS 26.5 Beta 2\r\nApple Insider iOS 26.5 Beta 2 App \r\n Apple \r\niOS 26.5 Beta 1 \r\nAI \r\nvivo \r\nOpenAI \r\n4 13 OpenAI 2027 \r\nKing’s Cross Regent Quarter Jahn Court Brassworks \r\n 544 \r\nOpenAI 200 \r\nOpenAI … [+1892 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Actualidadiphone.com"
+},
+"author": "Actualidad iPhone",
+"title": "El nuevo color rojo del iPhone 18 Pro apunta a ser el gran protagonista",
+"description": "Filtraciones apuntan a que el iPhone 18 Pro estrenará un rojo intenso y dejará fuera el negro. Así sería la nueva paleta de colores y su diseño.",
+"url": "https://www.actualidadiphone.com/el-nuevo-color-rojo-del-iphone-18-pro-apunta-a-ser-el-gran-protagonista/",
+"urlToImage": "https://www.actualidadiphone.com/wp-content/uploads/2026/04/nuevo-color-del-iPhone-18-Pro-seria-rojo-1.jpg",
+"publishedAt": "2026-04-14T00:08:10Z",
+"content": "El nuevo color del iPhone 18 Pro sería rojo y se ha convertido, casi sin querer, en el gran tema de conversación en torno a la próxima generación de gama alta de Apple. Con un calendario que volvería… [+11895 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "PhoneArena"
+},
+"author": "Ilia Temelkov",
+"title": "Huawei revealed the iPhone Fold competitor that should make Apple very worried",
+"description": "Huawei officially set the wide foldable trend in motion, months ahead of Apple’s long-awaited foldable iPhone.",
+"url": "https://www.phonearena.com/news/huawei-revealed-the-iphone-fold-competitor-that-should-make-apple-very-worried_id179636",
+"urlToImage": "https://m-cdn.phonearena.com/images/article/179636-wide-two_1200/Huawei-revealed-the-iPhone-Fold-competitor-that-should-make-Apple-very-worried.jpg",
+"publishedAt": "2026-04-14T00:39:25Z",
+"content": "After several leaks, Huawei has finally announced its brand-new foldable smartphone, which could mean trouble for Apple. Different from the rumored Pura X2, the new device is the official beginning o… [+2192 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "New York Post"
+},
+"author": "Caitlin McCormack",
+"title": "Upstate NY man allegedly tried to stab family member — while dressed as a cow",
+"description": "Police said that Pappalau was dressed as a cow during the entire ordeal, and didn't appear to have time for a costume change before he was apprehended.",
+"url": "https://nypost.com/2026/04/13/us-news/upstate-ny-man-allegedly-tried-to-stab-family-member-while-dressed-as-a-cow/",
+"urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2026/04/COMP-25.jpg?quality=75&strip=all&w=1200",
+"publishedAt": "2026-04-14T00:17:22Z",
+"content": "A nutjob New Yorker allegedly tried to stab a family member in their upstate home, but missed and fled all while dressed in a cow costume.\r\nAnthony Pappalau, 47, allegedly lunged at a male family mem… [+1716 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Just Jared"
+},
+"author": "Just Jared",
+"title": "'Young Washington' Star William Franklyn-Miller Promotes His First Major Movie Role at CinemaCon 2026",
+"description": "Newcomer William Franklyn-Miller is making his big screen debut as a lead actor in the upcoming movie Young Washington! The 22-year-old British actor and model promoted the film with an appearance at 2026 CinemaCon on Monday afternoon (April 13) at The Dolby …",
+"url": "https://www.justjared.com/2026/04/13/young-washington-star-william-franklyn-miller-promotes-his-first-major-movie-role-at-cinemacon-2026/",
+"urlToImage": "https://cdn01.justjared.com/wp-content/uploads/headlines/2026/04/william-cinemacon.jpg",
+"publishedAt": "2026-04-14T00:26:34Z",
+"content": "Newcomer William Franklyn-Miller is making his big screen debut as a lead actor in the upcoming movie Young Washington!\r\nThe 22-year-old British actor and model promoted the film with an appearance a… [+1034 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Newsshooter"
+},
+"author": "Matthew Allard ACS",
+"title": "Blackmagic Design Blackmagic URSA Cine Immersive 100G",
+"description": "Blackmagic Design has announced the Blackmagic URSA Cine Immersive 100G, the World’s first immersive cinema camera for live immersive production with 100 G Ethernet, dual 8Kx8K RGBW sensors, and 16 stops of claimed dynamic range. The Blackmagic URSA Cine Imme…",
+"url": "https://www.newsshooter.com/2026/04/13/blackmagic-design-blackmagic-ursa-cine-immersive-100g/",
+"urlToImage": "https://www.newsshooter.com/wp-content/uploads/2026/04/Screenshot-2026-04-14-at-9.44.41.jpg",
+"publishedAt": "2026-04-14T00:56:14Z",
+"content": "Blackmagic Design has announced the Blackmagic URSA Cine Immersive 100G, the Worlds first immersive cinema camera for live immersive production with 100 G Ethernet, dual 8Kx8K RGBW sensors, and 16 st… [+3759 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Newsshooter"
+},
+"author": "Erik Naso",
+"title": "Blackmagic Design Announces DaVinci Resolve 21. Major update adds new Photo page",
+"description": "Blackmagic Design announced DaVinci Resolve 21, a significant update introducing the new Photo page, which enables colorists and photographers to use Hollywood’s most advanced color tools for still photos. Other updates include new AI tools such as IntelliSea…",
+"url": "https://www.newsshooter.com/2026/04/13/blackmagic-design-announces-davinci-resolve-21-major-update-adds-new-photo-page/",
+"urlToImage": "https://www.newsshooter.com/wp-content/uploads/2026/04/davinci-resolve-21-thumb.jpg",
+"publishedAt": "2026-04-14T00:01:59Z",
+"content": "Blackmagic Design announced DaVinci Resolve 21, a significant update introducing the new Photo page, which enables colorists and photographers to use Hollywoods most advanced color tools for still ph… [+14894 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Inspiredtaste.net"
+},
+"author": "Joanne Gallagher",
+"title": "Beef Birria",
+"description": "This birria recipe slowly braises beef in a rich, spiced chile sauce. You can serve it as a stew with tortillas, or go all-in and make crispy, cheesy birria tacos.",
+"url": "https://www.inspiredtaste.net/99928/beef-birria-recipe/",
+"urlToImage": "https://www.inspiredtaste.net/wp-content/uploads/2026/04/Beef-Birria-Recipe-1.jpg",
+"publishedAt": "2026-04-14T01:02:46Z",
+"content": "This birria recipe slowly braises beef in a rich, spiced chile sauce. You can serve it as a stew with tortillas, or go all-in and make crispy, cheesy birria tacos.\r\nBirria, a savory Mexican stew, is … [+11272 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Gagadget.com"
+},
+"author": "gagadget.com",
+"title": "Apple работает над концепцией дизайна своих первых смарт-очков с различными оправами",
+"description": "Apple работает сразу над несколькими вариантами дизайна своих первых умных очков. Об этом сообщает Bloomberg.",
+"url": "https://gagadget.com/ru/704845-apple-rabotaet-nad-kontseptsiej-dizajna-svoih-pervyih-smart-ochkov-s-razlichnyimi-opravami/",
+"urlToImage": "https://gagadget.com/media/cache/79/fa/79fa9526b288c63c71b4570a12a8b6d1.webp",
+"publishedAt": "2026-04-14T00:35:54Z",
+"content": "Apple . Bloomberg.\r\n, : Wayfarer, , , . Apple , , - -.\r\n N50 Meta, Ray-Ban. Apple .\r\n, iPhone: , , . , Siri iOS 27.\r\n , 2026 2027-, 2027 .\r\n: Bloomberg"
+},
+-{
+-"source": {
+"id": null,
+"name": "Ithome.com"
+},
+"author": null,
+"title": "达芬奇 DaVinci Resolve Studio 21 发布，为照片带来好莱坞级别调色工具",
+"description": "IT之家 4 月 14 日消息，当地时间 4 月 13 日，Blackmagic Design 宣布推出 DaVinci Resolve 21，这次重大更新带来了新的照片页面，官方称能让调色师和平面摄影师使用好莱坞级别的先进调色工具处理静态照片。其他更新包括新的 AI 工具，例如用于快速内容搜索的 IntelliSearch，用于焦点调整的 CineFocus 和面部精修工具等。Krokodove 工具集为 Fusion 添加了 70 多种新图文，Fairlight 文件夹简化了音频轨道管理，同时关键帧操作、Mu…",
+"url": "https://www.ithome.com/0/938/778.htm",
+"urlToImage": null,
+"publishedAt": "2026-04-14T00:56:47Z",
+"content": "IT 4 14 4 13 Blackmagic Design DaVinci Resolve 21\r\nAI IntelliSearch CineFocus \r\nKrokodove Fusion 70 Fairlight MultiMaster \r\nIT DaVinci Resolve 21 \r\n<ul><li> DaVinci Resolve\r\n</li><li> DaVinci \r\n</li>… [+759 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Newmobilelife.com"
+},
+"author": "Andy",
+"title": "【史上最低價】Apple Watch Series 11 85 折起",
+"description": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1763633293698\"} -->\n近日，Amazon 對 Apple Watch Series 11 系列全面降價，幅度高達 100 美元，Apple Watch Series 11 42mm 提供 85 折優惠，至 46mm 則有 87 折！\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":524607,\"sizeSlug\":\"large\"…",
+"url": "https://www.newmobilelife.com/2026/04/14/apple-watch-series-11-discount-2/",
+"urlToImage": "https://static.newmobilelife.com/wp-content/uploads/2025/11/applewatchs11.jpg",
+"publishedAt": "2026-04-14T00:21:32Z",
+"content": "Amazon Apple Watch Series 11 100 Apple Watch Series 11 42mm 85 46mm 87 \r\nApple Watch Series 11 [GPS 42mm] Smartwatch with Space Gray Aluminum Case with Black Sport Band - S/M. Sleep Score, Fitness Tr… [+5029 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Newmobilelife.com"
+},
+"author": "Andy",
+"title": "iPhone Fold 延後量產時間　維持 2026 年秋季發佈目標",
+"description": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1776126228053\"} -->\nApple 首款摺疊智能手機 iPhone Fold 的生產進度出現變動。雖然生產階段出現約一至兩個月的延誤，但 Apple 仍計劃於 2026 年秋季正式發佈該產品，且尚未向供應商傳達任何推遲發佈的計劃。這意味著 Apple 將採取更為緊湊的生產進度，以確保這款備受市場期待的型號能如期上市。\n<!-- /wp:paragraph -->\n\n<!-…",
+"url": "https://www.newmobilelife.com/2026/04/14/iphone-fold-late-mass-production-2026/",
+"urlToImage": "https://static.newmobilelife.com/wp-content/uploads/2026/04/iphone-fold-text-2.jpg",
+"publishedAt": "2026-04-14T00:24:00Z",
+"content": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1776126228053\"} -->\nApple 首款摺疊智能手機 iPhone Fold 的生產進度出現變動。雖然生產階段出現約一至兩個月的延誤，但 Apple 仍計劃於 2026 年秋季正式發佈該產品，且尚未向供應商傳達任何推遲發佈的計劃。這意味著 Apple 將… [+1342 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Softantenna.com"
+},
+"author": "saadmin",
+"title": "Apple、iOS 26.5、iPadOS 26.5、macOS 26.5などの各beta 2を開発者向けに公開",
+"description": "Appleは本日、iOS 26.5、iPadOS 26.5、macOS 26.5、tvOS 26.5、visionOS 26.5、watchOS 26.5の各beta 2を開発者向けに公開しました(MacRumors)。 開発者向けベータ版",
+"url": "https://softantenna.com/blog/ios-26-5-beta-2/",
+"urlToImage": "https://softantenna.com/blog/wp-content/uploads/2025/06/ios26_2.jpg",
+"publishedAt": "2026-04-14T00:54:05Z",
+"content": "AppleiOS 26.5iPadOS 26.5macOS 26.5tvOS 26.5visionOS 26.5watchOS 26.5beta 2(MacRumors)\r\nApple Developer ProgramApple Beta Software Program &gt; &gt; &gt; \r\n:\r\n<table><tr><th></th><th></th><th></th></t… [+556 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "MMA Fighting"
+},
+"author": "Mike Heck",
+"title": "On To the Next One: What’s next for Carlos Ulberg, Jiri Prochazka after UFC 327?",
+"description": "Carlos Ulberg knocked out Jiri Prochazka at UFC 327",
+"url": "https://www.mmafighting.com/ufc/482397/on-to-the-next-one-whats-next-for-carlos-ulberg-jiri-prochazka-after-ufc-327",
+"urlToImage": "https://s.yimg.com/ny/api/res/1.2/7fbI6EeIrUmZkDmwoMpWeQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU7Y2Y9d2VicA--/https://media.zenfs.com/en/sb_nation_articles_115/d5644ad0dd048451f76a98d127f072e3",
+"publishedAt": "2026-04-14T00:00:00Z",
+"content": "Carlos Ulberg captured the UFC light heavyweight title with a stunning knockout over Jiri Prochazka in the UFC 327 main event. What made it so remarkable was the fact that Ulberg was badly injured, l… [+1059 chars]"
+},
+-{
+-"source": {
+"id": "usa-today",
+"name": "USA Today"
+},
+"author": "Jess Root, Cardinals Wire",
+"title": "2026 NFL draft: Arizona Cardinals 1 of several teams wishing to trade back",
+"description": "One analyst says everyone from No. 3 to No. 7 overall wants to trade back.",
+"url": "https://cardswire.usatoday.com/story/sports/nfl/cardinals/2026/04/13/2026-nfl-draft-arizona-cardinals-1-of-several-teams-wishing-to-trade-back/89599027007/",
+"urlToImage": "https://s.yimg.com/ny/api/res/1.2/B8U9nPNCQIFKAEwgNEWdAA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03ODY7Y2Y9d2VicA--/https://media.zenfs.com/en/arizona_cardinals_wire_usa_today_sports_articles_662/5345c58b1520cc5ab3b210db17e2cb10",
+"publishedAt": "2026-04-14T00:11:08Z",
+"content": "The Arizona Cardinals hold the third overall pick in the 2026 NFL draft, just as they did in 2023. They are apparently trying to do what they did in 2023 as well.\r\nIt has been known for a bit that th… [+1444 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Yahoo Entertainment"
+},
+"author": null,
+"title": "蘋果前AI負責人John Giannandrea本週正式離職，揭開內部高層核心圈排外文化",
+"description": "彭博新聞記者Mark Gurman指出，蘋果前人工智慧負責人John Giannandrea即將在本週正式結束其在蘋果職涯。這位曾被寄予厚望、從Google挖角而來的AI大將，在歷經Apple Intelligence發表初期的波折，以及Siri升級持續延宕後，其權力早已被逐步架空。而John Giannandrea的離去，不僅象徵蘋果AI發展進入下一個階段...",
+"url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_d0d866e0-8cac-4ec8-abab-8455520fb39a",
+"urlToImage": null,
+"publishedAt": "2026-04-14T00:00:52Z",
+"content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+1045 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Alltoc.com"
+},
+"author": "AllToc",
+"title": "What’s Apple doing with AI smart glasses frames? #tech",
+"description": "Apple tests multiple frame styles for AI smart glasses Apple is developing display free AI smart glasses intended to rival Meta’s Ray Ban style glasses, with Bloomberg reporting that the company is testing at least four different frame designs . The prototype…",
+"url": "https://alltoc.com/tech/whats-apple-doing-with-ai-smart-glasses-frames",
+"urlToImage": "https://alltoc.com/cdn/1046/og.png",
+"publishedAt": "2026-04-14T00:01:59Z",
+"content": "Apple tests multiple frame styles for AI smart glasses\r\nApple is developing display-free AI smart glasses intended to rival Metas Ray-Ban-style glasses, with Bloomberg reporting that the company is t… [+1965 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "pymnts.com"
+},
+"author": "PYMNTS",
+"title": "Banks Face Complex Cyber Risks From Anthropic’s Mythos",
+"description": "Anthropic’s new artificial intelligence (AI) model Mythos poses a significant threat to the banking industry, as it could expose legacy systems to “unprecedented cyber risks,” Reuters reported Monday (April 13). Experts interviewed by Reuters said Mythos coul…",
+"url": "https://www.pymnts.com/cybersecurity/2026/banks-face-complex-cyber-risks-from-anthropics-mythos/",
+"urlToImage": "https://www.pymnts.com/wp-content/uploads/2026/04/Anthropic-Mythos.jpeg",
+"publishedAt": "2026-04-14T00:02:08Z",
+"content": "Anthropics new artificial intelligence (AI) model Mythos poses a significant threat to the banking industry, as it could expose legacy systems to unprecedented cyber risks, Reuters reported Monday (A… [+2222 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Livedoor.biz"
+},
+"author": "vintagecomp",
+"title": "Apple、Keynote 14, Numbers 14, Pages 14 の提供を終了",
+"description": "お宝さんに、出ていました。Mac用アプリ「Keynote 14.5」「Numbers 14.5」「Pages 14.5」の提供を終了しています。有料サブスクのApple Creator Studioに「Keynote 15」「Numbers 15」「Pages 15」が含まれていますが、従来通りバージョン14.5は無料で提供されていました。こ...",
+"url": "https://vintagecomp.livedoor.biz/archives/52063885.html",
+"urlToImage": "https://parts.blog.livedoor.jp/img/usr/cmn/ogp_image/livedoor.png",
+"publishedAt": "2026-04-14T00:58:04Z",
+"content": "Apple Creator StudioKeynote 15Numbers 15Pages 1514.514.5OSMacMacBook Neo Mac MS Office ProApple Creator Studio\r\nMaciMovieGarageband ProApple Creator Studio"
+},
+-{
+-"source": {
+"id": null,
+"name": "ZDNet"
+},
+"author": "Kayla Solino",
+"title": "I followed the 'Plus 5' rule for wireless charging, and it fixed my iPhone's charge speeds",
+"description": "Wireless charging is a helpful feature, but you may be getting the top speed with your accessories. Here's what to check for.",
+"url": "https://www.zdnet.com/article/plus-five-wireless-charging-rule-iphone-android-faster-speeds/",
+"urlToImage": "https://www.zdnet.com/a/img/resize/a3a8e5c4d4b94f2fca6731e67689ba1f2e564235/2024/08/22/4a6720fe-c885-4445-836b-48cf82b94b2a/img-1916.jpg?auto=webp&fit=crop&height=675&width=1200",
+"publishedAt": "2026-04-14T01:00:41Z",
+"content": "Kayla Solino/ZDNET\r\nFollow ZDNET: Add us as a preferred source on Google.\r\nZDNET's key takeaways \r\n<ul><li>It's easy to reduce the efficiency of a wireless charger without realizing it. </li><li>Prop… [+4689 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "PhoneArena"
+},
+"author": "Abdullah Asim",
+"title": "Apple sets its sights higher for MacBook Neo, the little laptop that could",
+"description": "The MacBook Neo came as a surprise, both to consumers and to Apple.",
+"url": "https://www.phonearena.com/news/apple-sets-sights-higher-for-macbook-neo_id179638",
+"urlToImage": "https://m-cdn.phonearena.com/images/article/179638-wide-two_1200/Apple-sets-its-sights-higher-for-MacBook-Neo-the-little-laptop-that-could.jpg",
+"publishedAt": "2026-04-14T00:00:45Z",
+"content": "What makes the MacBook Neo so popular is the fact that it is such a major departure from Apples usual approach to its laptops.The MacBook Air and the MacBook Pro have remained expensive, professional… [+1448 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Pypi.org"
+},
+"author": null,
+"title": "superdoc-sdk-cli-darwin-arm64 1.6.0.dev11",
+"description": "SuperDoc CLI binary for macOS ARM64 (Apple Silicon)",
+"url": "https://pypi.org/project/superdoc-sdk-cli-darwin-arm64/1.6.0.dev11/",
+"urlToImage": null,
+"publishedAt": "2026-04-14T00:24:43Z",
+"content": "A required part of this site couldnt load. This may be due to a browser\r\n extension, network issues, or browser settings. Please check your\r\n connection, disable any ad blockers, or try using a diffe… [+12 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "CNET"
+},
+"author": null,
+"title": "Tenorshare Co., Ltd.アンインストールしたLINEは復元できる？トーク履歴・友だちを復活させる方法",
+"description": "Tenorshare社が提供しているLINEデータ復元ソフト「UltData LINE Recovery」最新バージョンは4月14日（火）発表されました。今回のアップデートでは、Googleドライブのバグを修復しました。★UltData LINE Recovery公式サイト：https://x.gd/pn4rW「LINEを間違ってアンインストールしてしまった…」「トーク履歴や写真はも...",
+"url": "https://japan.cnet.com/release/31161071/",
+"urlToImage": "https://japan.cnet.com/media/c/2012/images/logo/logo_ogp_1200.png",
+"publishedAt": "2026-04-14T00:00:00Z",
+"content": "TenorshareLINEUltData LINE Recovery414Google\r\nUltData LINE Recovery\r\nLINELINE\r\nLINE\r\nPart1.LINE\r\nLINELINE\r\n: LINE Pay: \r\nLINE\r\nPart2.LINE\r\nLINE\r\n1.: 2.: Apple IDGoogle3.: \r\nPart3.LINE\r\n2\r\n1LINEiPhone… [+363 chars]"
+},
+-{
+-"source": {
+"id": null,
+"name": "Applelinkage.com"
+},
+"author": "Al",
+"title": "Apple、iWork版「Keynote」「Numbers」「Pages」の提供を終了",
+"description": "Apple Inc.が、iWork版「Keynote」「Numbers」「Pages」の提供を終了しています。 Appleは今年1月よりApple Creator Studio版のKeynote、Numbers、Page … 続きを読む Apple、iWork版「Keynote」「Numbers」「Pages」の提供を終了 →",
+"url": "https://www.applelinkage.com/2026/04/14/apple-discontinues-iwork-versions-of-pages-numbers-keynote/",
+"urlToImage": null,
+"publishedAt": "2026-04-14T01:07:07Z",
+"content": "Apple Inc.iWorkKeynoteNumbersPages\r\nApple1Apple Creator StudioKeynoteNumbersPagesApp StoreApp StoreiWork14Creator Studio15\r\niWorkApp Store"
+}
+]
+}
+Get the current top headlines for a country or category
+News API is great as a data source for news tickers and other applications where you want to show your users live headlines. We track headlines in 7 categories across over 50 countries, and at over a hundred top publications and blogs, in near real time.
+
+Let's make a request to get live top headlines in the US right now. We'll use the /top-headlines endpoint for this.
+
+This returns a JSON object with the results in an array we can iterate over.
+
+For more information about the /top-headlines endpoint, including valid parameters for focusing on specific countries and categories, see the Top Headlines endpoint reference.
+
+Definition
+GET https://newsapi.org/v2/top-headlines?country=us&apiKey=API_KEY
+Example request
+curl https://newsapi.org/v2/top-headlines -G \
+    -d country=us \
+    -d apiKey=d2605752c905432aa5a0bffbc1ed5f6b
+Example response
+{
+"status": "ok",
+"totalResults": 36,
+-"articles": [
+-{
+-"source": {
+"id": "espn",
+"name": "ESPN"
+},
+"author": null,
+"title": "Wings select UConn's Azzi Fudd No. 1 in 2026 WNBA draft - ESPN",
+"description": "Azzi Fudd is on her way to Dallas as the No. 1 pick in the WNBA draft with a $500,000 payday waiting for the former UConn star. Minnesota took Olivia Miles of TCU with the No. 2 pick.",

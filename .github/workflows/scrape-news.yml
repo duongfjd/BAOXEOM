@@ -1,0 +1,35 @@
+name: Báo Xe Ôm Auto Scraper Pipeline
+
+on:
+  schedule:
+    # Chạy mỗi 4 tiếng (00:00, 04:00, 08:00, ...)
+    - cron: '0 */4 * * *'
+  workflow_dispatch: # Cho phép nhấn nút kích hoạt thủ công trên trình duyệt web Github
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+      - name: 📥 Clone Repository Báo Xe Ôm
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Khởi động Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 📦 Cài đặt thư viện Node Module Pkgs
+        run: npm install
+
+      - name: 🚀 Khởi chạy hệ thống Báo Xe Ôm AI
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          NEWS_API_URL: ${{ secrets.NEWS_API_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: node run.js

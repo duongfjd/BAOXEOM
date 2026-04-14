@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo Xe Ôm - Tin Tức AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --text: #f8fafc;
+        --accent: #3b82f6;
+      }
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: var(--text);
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      h1 {
+        font-size: 3.5em;
+        font-weight: 700;
+        background: -webkit-linear-gradient(45deg, #3b82f6, #ec4899, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+        letter-spacing: -1px;
+      }
+      p.subtitle {
+        color: #94a3b8;
+        font-size: 1.2em;
+        font-weight: 300;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 24px;
+      }
+      .card {
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 28px;
+        backdrop-filter: blur(10px);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .card-category {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        align-self: flex-start;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .cat-cong-nghe { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+      .cat-phap-luat { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+      .cat-the-thao { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+      .cat-khac { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+      .card-title {
+        font-size: 1.35em;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 16px;
+        color: #ffffff;
+      }
+      .card-summary {
+        color: #cbd5e1;
+        font-size: 1.05em;
+        line-height: 1.6;
+        margin-bottom: 24px;
+        flex-grow: 1;
+        font-weight: 300;
+      }
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+        color: #64748b;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .read-more {
+        color: #60a5fa;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+      .read-more:hover {
+        color: #93c5fd;
+      }
+      .loader {
+        text-align: center;
+        padding: 50px;
+        color: #94a3b8;
+        grid-column: 1 / -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>BÁO XE ÔM</h1>
+        <p class="subtitle">Trải nghiệm tin tức thông minh tự động hóa với AI</p>
+      </header>
+      <div id="articles-grid" class="grid">
+        <div class="loader">Đang tải dữ liệu từ máy chủ...</div>
+      </div>
+    </div>
+
+    <script>
+      function getCategoryClass(cat) {
+        if (!cat) return 'cat-khac';
+        const str = cat.toLowerCase();
+        if (str.includes('công nghệ')) return 'cat-cong-nghe';
+        if (str.includes('pháp luật')) return 'cat-phap-luat';
+        if (str.includes('thể thao')) return 'cat-the-thao';
+        return 'cat-khac';
+      }
+
+      function formatDate(dateStr) {
+        if (!dateStr) return '';
+        const d = new Date(dateStr);
+        return d.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+      }
+
+      async function loadArticles() {
+        try {
+          const res = await fetch('/api/articles');
+          const data = await res.json();
+          const grid = document.getElementById('articles-grid');
+          
+          if (data.length === 0) {
+            grid.innerHTML = '<div class="loader">Chưa có bài báo nào trong cơ sở dữ liệu. Vui lòng chờ quá trình AI quét lần mạng tới!</div>';
+            return;
+          }
+
+          grid.innerHTML = data.map(article => `
+            <div class="card">
+              ${article.url_to_image ? `<img src="${article.url_to_image}" alt="Thumbnail" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;" />` : ''}
+              <span class="card-category ${getCategoryClass(article.category)}">${article.category || 'Khác'}</span>
+              <div class="card-title">${article.title_vi || article.original_title || 'Chưa có tiêu đề'}</div>
+              <div class="card-summary">${article.summary_vi || 'Đang xử lý nội dung tóm tắt...'}</div>
+              <div class="card-footer" style="padding-top: 10px; border-top: none; flex-direction: column; align-items: flex-start; gap: 10px;">
+                <div style="font-size: 0.95em; color: #94a3b8;">
+                  ${article.author ? `<strong>${article.author}</strong> • ` : ''}
+                  ${article.source_name ? `<em>${article.source_name}</em>` : ''}
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: 5px;">
+                  <span>${formatDate(article.published_at)}</span>
+                  <a href="${article.url}" target="_blank" class="read-more">Đọc bài gốc →</a>
+                </div>
+              </div>
+            </div>
+          `).join('');
+
+        } catch (error) {
+          document.getElementById('articles-grid').innerHTML = '<div class="loader">Lỗi kết nối. Không thể tải bản tin.</div>';
+        }
+      }
+
+      loadArticles();
+    </script>
+  </body>
+</html>
