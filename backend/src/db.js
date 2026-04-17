@@ -29,6 +29,9 @@ const initDB = async () => {
     await client.query(`ALTER TABLE articles ADD COLUMN IF NOT EXISTS author TEXT;`);
     await client.query(`ALTER TABLE articles ADD COLUMN IF NOT EXISTS url_to_image TEXT;`);
     
+    // Thêm cột full_content_vi để lưu bài viết chi tiết
+    await client.query(`ALTER TABLE articles ADD COLUMN IF NOT EXISTS full_content_vi TEXT;`);
+    
     console.log('✅ Bảng articles đã sẵn sàng với cấu trúc mới.');
   } catch (error) {
     console.error('❌ Lỗi khởi tạo DB:', error);

@@ -8,7 +8,12 @@ const summarizeArticle = async (articleContent) => {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `
-Tóm tắt bài báo sau trong 50 từ, dịch sang tiếng Việt, và trả về định dạng JSON gồm các trường: "title_vi", "summary_vi", "category" (Chọn 1 trong: Thể thao, Pháp luật, Công nghệ).
+Tóm tắt và phân tích bài báo sau, sau đó trả về cấu trúc JSON gồm các trường:
+- "title_vi": Tiêu đề bài báo dịch sang tiếng Việt.
+- "summary_vi": Tóm tắt ngắn gọn bài báo trong khoảng 50 từ.
+- "category": Phân loại chuyên mục (Chọn 1 trong: Thể thao, Pháp luật, Công nghệ).
+- "full_content_vi": Viết lại nội dung bài báo một cách chi tiết bằng tiếng Việt. Hãy dựa vào nội dung gốc để phát triển, kéo dài, và làm cho bài báo thêm phong phú, sinh động (như một bài báo hoàn chỉnh, có mở bài, diễn biến và kết luận nếu cần thiết).
+
 Nội dung bài báo:
 ${articleContent}
 

@@ -31,8 +31,8 @@ const runPipeline = async () => {
       
       if (aiResult) {
         const insertQuery = `
-          INSERT INTO articles (url, original_title, title_vi, summary_vi, category, published_at, source_name, author, url_to_image)
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+          INSERT INTO articles (url, original_title, title_vi, summary_vi, category, published_at, source_name, author, url_to_image, full_content_vi)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
         `;
         await client.query(insertQuery, [
           article.url,
@@ -43,7 +43,8 @@ const runPipeline = async () => {
           new Date(article.publishedAt),
           article.source?.name || null,
           article.author || null,
-          article.urlToImage || null
+          article.urlToImage || null,
+          aiResult.full_content_vi || null
         ]);
         console.log(`✅ Đã cất vào Supabase: [${aiResult.category}] ${aiResult.title_vi}`);
       }

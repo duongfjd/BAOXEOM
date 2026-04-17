@@ -1,0 +1,6 @@
+{
+  "name": "News Reader - Đọc Báo",
+  "description": "A modern news reader application fetching articles from a PostgreSQL database.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
