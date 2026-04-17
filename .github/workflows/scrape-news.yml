@@ -1,6 +1,8 @@
 name: Báo Xe Ôm Auto Scraper Pipeline
 
 on:
+  push:
+    branches: [ main ]
   schedule:
     # Chạy mỗi 1 tiếng (00:00, 01:00, 02:00, ...)
     - cron: '0 * * * *'
