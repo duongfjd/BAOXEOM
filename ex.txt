@@ -1,385 +1,1117 @@
+Open SearchSearch
+Keyboard Shortcut:CTRL⌃ k
+
+Introduction
+
+Overview
+
+Quick Start
+
+Close Quick Start
+
+Generate an Image
+
+Generate Text (OpenAI-compatible)
+
+Generate Speech
+
+🖥️ CLI
+
+🔐 Authentication
+
+❌ Errors
+
+✍️ Text Generation
+Close Group
+
+Chat Completions
+HTTP Method: POST
+
+Simple Text Generation
+HTTP Method: GET
+
+🖼️ Image Generation
+Open Group
+
+🎬 Video Generation
+Open Group
+
+🔊 Audio Generation
+Open Group
+
+🤖 Models
+Close Group
+
+List Models (OpenAI-compatible)
+HTTP Method: GET
+
+List Image & Video Models
+HTTP Method: GET
+
+List Text Models (Detailed)
+HTTP Method: GET
+
+List Audio Models
+HTTP Method: GET
+
+👤 Account
+Close Group
+
+Get Profile
+HTTP Method: GET
+
+Get Balance
+HTTP Method: GET
+
+Get Usage History
+HTTP Method: GET
+
+Get Daily Usage
+HTTP Method: GET
+
+List API Keys
+HTTP Method: GET
+
+Create API Key
+HTTP Method: POST
+
+Revoke API Key
+HTTP Method: DEL
+
+Get API Key Info
+HTTP Method: GET
+
+📦 Media Storage
+Open Group
+
+🌸 Bring Your Own Pollen
+Open API Client
+Powered by Scalar
+
+v0.3.0
+OAS 3.1.0
+Pollinations API
+
+Download OpenAPI Document
+
+Download OpenAPI Document
+Introduction
+Generate text, images, video, and audio with a single API. OpenAI-compatible — use any OpenAI SDK by changing the base URL.
+
+Base URL: https://gen.pollinations.ai
+
+Get your API key: enter.pollinations.ai
+
+Overview
+Capability	Endpoint	Format
+✍️ Text Generation	POST /v1/chat/completions	OpenAI-compatible
+✍️ Simple Text	GET /text/{prompt}	Plain text
+🖼️ Image Generation	GET /image/{prompt}	JPEG / PNG
+🎬 Video Generation	GET /video/{prompt}	MP4
+🔊 Text-to-Speech	GET /audio/{text}	MP3
+🔊 Music Generation	GET /audio/{text}	MP3
+🔊 Transcription	POST /v1/audio/transcriptions	JSON
+🤖 Model Discovery	GET /v1/models	JSON
+Quick Start
+Generate an Image
+Paste this URL in your browser — no code needed:
+
+https://gen.pollinations.ai/image/a%20cat%20in%20space
+Or use it directly in HTML:
+
+<img src="https://gen.pollinations.ai/image/a%20cat%20in%20space" />
+Generate Text (OpenAI-compatible)
+curl https://gen.pollinations.ai/v1/chat/completions \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model": "openai", "messages": [{"role": "user", "content": "Hello!"}]}'
+Generate Speech
+curl "https://gen.pollinations.ai/audio/Hello%20world?voice=nova" \
+  -H "Authorization: Bearer YOUR_API_KEY" -o speech.mp3
+🖥️ CLI
+@pollinations_ai/cli wraps this API for terminals and agents. Structured --json output, deterministic exit codes, friendly 402 balance hints, stdin piping.
+
+npm install -g @pollinations_ai/cli
+polli auth login
+polli gen image "a cat in space" --model flux --output cat.png
+polli gen text "summarize this" < notes.md
+polli models --type image
+Source: github.com/pollinations/pollinations/tree/main/packages/polli-cli
+
+🔐 Authentication
+All generation requests require an API key from enter.pollinations.ai. Model listing endpoints work without authentication.
+
+Two key types:
+
+Type	Prefix	Use case	Rate limits
+Secret	sk_	Server-side apps	None
+Publishable	pk_	Client-side apps (beta)	1 pollen/IP/hour
+How to authenticate:
+
+# Option 1: Authorization header (recommended)
+curl -H "Authorization: Bearer YOUR_API_KEY" ...
+
+# Option 2: Query parameter
+curl "https://gen.pollinations.ai/text/hello?key=YOUR_API_KEY"
+Warning: Never expose secret keys (sk_) in client-side code. Use publishable keys (pk_) for frontend apps.
+
+❌ Errors
+All errors return JSON with a consistent format:
+
 {
-"status": "ok",
-"totalResults": 27,
--"articles": [
--{
--"source": {
-"id": null,
-"name": "9to5Mac"
-},
-"author": "Marcus Mendes",
-"title": "Dope Thief’s Brian Tyree Henry joins upcoming Apple Original Films feature",
-"description": "Apple TV confirmed today that Brian Tyree Henry, who recently starred alongside Wagner Moura (The Secret Agent, Elite Squad) on Dope Thief, is joining a new feature film from Apple Original Films. Here are the details.\n\n\n\n more…",
-"url": "https://9to5mac.com/2026/04/13/dope-thiefs-brian-tyree-henry-joins-upcoming-apple-original-films-feature/",
-"urlToImage": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/04/dope-thief.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
-"publishedAt": "2026-04-14T00:23:35Z",
-"content": "Apple TV confirmed today that Brian Tyree Henry, who recently starred alongside Wagner Moura (The Secret Agent, Elite Squad) on Dope Thief, is joining a new feature film from Apple Original Films. He… [+1544 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "9to5Mac"
-},
-"author": "Chance Miller",
-"title": "Never lose anything again with these Find My accessories",
-"description": "There’s a robust ecosystem of Find My accessories on the market nowadays, across various different designs and form factors. Here are some of the most popular options. \n\n\n\n more…",
-"url": "https://9to5mac.com/2026/04/13/best-find-my-accessories/",
-"urlToImage": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2022/08/Apple-Find-My-sound-alert-iOS-16.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
-"publishedAt": "2026-04-14T00:46:48Z",
-"content": "Theres a robust ecosystem of Find My accessories on the market nowadays, across various different designs and form factors. Here are some of the most popular options. \r\nUpdated April 13, 2026: Added … [+4367 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Ifanr.com"
-},
-"author": "马扶摇",
-"title": "智能眼镜「iPhone 时刻」终将到来，因为苹果亲自下场了",
-"description": "帅是第一生产力#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-"url": "https://www.ifanr.com/1661905",
-"urlToImage": "https://s3.ifanr.com/wp-content/uploads/2026/04/banner-16to9-1.jpg",
-"publishedAt": "2026-04-14T01:00:23Z",
-"content": "Meta Ray-Ban Meta Oakley Meta \r\nMeta + + + 2025 \r\n·\r\n N50 2026 2027 2027 \r\nGlass Almanac\r\nN50 Vision Pro VPGVision Products Group VPG\r\n· N50 \r\nMeta Ray-Ban Forbes\r\nN50 Pro Siri \r\n· N50 \r\n Apple Watch… [+572 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Ifanr.com"
-},
-"author": "Shawn Rain",
-"title": "早报｜iOS 26.5 Beta 2曝光地图广告机制/华为公布大阔折叠外观/不到两天，奥特曼住所再遭袭击",
-"description": "· OpenAI 伦敦「新家」定档：首个永久办公室明年见\n· 人形机器人「上岗」景区，智元远征 A3 首批商用交付完成\n· 华为 Pura X Max 外观曝光#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-"url": "https://www.ifanr.com/1662060",
-"urlToImage": "https://s3.ifanr.com/images/ep/cover-images/yang_guang_pao_bu_ren_cover.jpg",
-"publishedAt": "2026-04-14T00:21:46Z",
-"content": "iOS 26.5 Beta 2\r\nApple Insider iOS 26.5 Beta 2 App \r\n Apple \r\niOS 26.5 Beta 1 \r\nAI \r\nvivo \r\nOpenAI \r\n4 13 OpenAI 2027 \r\nKing’s Cross Regent Quarter Jahn Court Brassworks \r\n 544 \r\nOpenAI 200 \r\nOpenAI … [+1892 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Actualidadiphone.com"
-},
-"author": "Actualidad iPhone",
-"title": "El nuevo color rojo del iPhone 18 Pro apunta a ser el gran protagonista",
-"description": "Filtraciones apuntan a que el iPhone 18 Pro estrenará un rojo intenso y dejará fuera el negro. Así sería la nueva paleta de colores y su diseño.",
-"url": "https://www.actualidadiphone.com/el-nuevo-color-rojo-del-iphone-18-pro-apunta-a-ser-el-gran-protagonista/",
-"urlToImage": "https://www.actualidadiphone.com/wp-content/uploads/2026/04/nuevo-color-del-iPhone-18-Pro-seria-rojo-1.jpg",
-"publishedAt": "2026-04-14T00:08:10Z",
-"content": "El nuevo color del iPhone 18 Pro sería rojo y se ha convertido, casi sin querer, en el gran tema de conversación en torno a la próxima generación de gama alta de Apple. Con un calendario que volvería… [+11895 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "PhoneArena"
-},
-"author": "Ilia Temelkov",
-"title": "Huawei revealed the iPhone Fold competitor that should make Apple very worried",
-"description": "Huawei officially set the wide foldable trend in motion, months ahead of Apple’s long-awaited foldable iPhone.",
-"url": "https://www.phonearena.com/news/huawei-revealed-the-iphone-fold-competitor-that-should-make-apple-very-worried_id179636",
-"urlToImage": "https://m-cdn.phonearena.com/images/article/179636-wide-two_1200/Huawei-revealed-the-iPhone-Fold-competitor-that-should-make-Apple-very-worried.jpg",
-"publishedAt": "2026-04-14T00:39:25Z",
-"content": "After several leaks, Huawei has finally announced its brand-new foldable smartphone, which could mean trouble for Apple. Different from the rumored Pura X2, the new device is the official beginning o… [+2192 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "New York Post"
-},
-"author": "Caitlin McCormack",
-"title": "Upstate NY man allegedly tried to stab family member — while dressed as a cow",
-"description": "Police said that Pappalau was dressed as a cow during the entire ordeal, and didn't appear to have time for a costume change before he was apprehended.",
-"url": "https://nypost.com/2026/04/13/us-news/upstate-ny-man-allegedly-tried-to-stab-family-member-while-dressed-as-a-cow/",
-"urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2026/04/COMP-25.jpg?quality=75&strip=all&w=1200",
-"publishedAt": "2026-04-14T00:17:22Z",
-"content": "A nutjob New Yorker allegedly tried to stab a family member in their upstate home, but missed and fled all while dressed in a cow costume.\r\nAnthony Pappalau, 47, allegedly lunged at a male family mem… [+1716 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Just Jared"
-},
-"author": "Just Jared",
-"title": "'Young Washington' Star William Franklyn-Miller Promotes His First Major Movie Role at CinemaCon 2026",
-"description": "Newcomer William Franklyn-Miller is making his big screen debut as a lead actor in the upcoming movie Young Washington! The 22-year-old British actor and model promoted the film with an appearance at 2026 CinemaCon on Monday afternoon (April 13) at The Dolby …",
-"url": "https://www.justjared.com/2026/04/13/young-washington-star-william-franklyn-miller-promotes-his-first-major-movie-role-at-cinemacon-2026/",
-"urlToImage": "https://cdn01.justjared.com/wp-content/uploads/headlines/2026/04/william-cinemacon.jpg",
-"publishedAt": "2026-04-14T00:26:34Z",
-"content": "Newcomer William Franklyn-Miller is making his big screen debut as a lead actor in the upcoming movie Young Washington!\r\nThe 22-year-old British actor and model promoted the film with an appearance a… [+1034 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Newsshooter"
-},
-"author": "Matthew Allard ACS",
-"title": "Blackmagic Design Blackmagic URSA Cine Immersive 100G",
-"description": "Blackmagic Design has announced the Blackmagic URSA Cine Immersive 100G, the World’s first immersive cinema camera for live immersive production with 100 G Ethernet, dual 8Kx8K RGBW sensors, and 16 stops of claimed dynamic range. The Blackmagic URSA Cine Imme…",
-"url": "https://www.newsshooter.com/2026/04/13/blackmagic-design-blackmagic-ursa-cine-immersive-100g/",
-"urlToImage": "https://www.newsshooter.com/wp-content/uploads/2026/04/Screenshot-2026-04-14-at-9.44.41.jpg",
-"publishedAt": "2026-04-14T00:56:14Z",
-"content": "Blackmagic Design has announced the Blackmagic URSA Cine Immersive 100G, the Worlds first immersive cinema camera for live immersive production with 100 G Ethernet, dual 8Kx8K RGBW sensors, and 16 st… [+3759 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Newsshooter"
-},
-"author": "Erik Naso",
-"title": "Blackmagic Design Announces DaVinci Resolve 21. Major update adds new Photo page",
-"description": "Blackmagic Design announced DaVinci Resolve 21, a significant update introducing the new Photo page, which enables colorists and photographers to use Hollywood’s most advanced color tools for still photos. Other updates include new AI tools such as IntelliSea…",
-"url": "https://www.newsshooter.com/2026/04/13/blackmagic-design-announces-davinci-resolve-21-major-update-adds-new-photo-page/",
-"urlToImage": "https://www.newsshooter.com/wp-content/uploads/2026/04/davinci-resolve-21-thumb.jpg",
-"publishedAt": "2026-04-14T00:01:59Z",
-"content": "Blackmagic Design announced DaVinci Resolve 21, a significant update introducing the new Photo page, which enables colorists and photographers to use Hollywoods most advanced color tools for still ph… [+14894 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Inspiredtaste.net"
-},
-"author": "Joanne Gallagher",
-"title": "Beef Birria",
-"description": "This birria recipe slowly braises beef in a rich, spiced chile sauce. You can serve it as a stew with tortillas, or go all-in and make crispy, cheesy birria tacos.",
-"url": "https://www.inspiredtaste.net/99928/beef-birria-recipe/",
-"urlToImage": "https://www.inspiredtaste.net/wp-content/uploads/2026/04/Beef-Birria-Recipe-1.jpg",
-"publishedAt": "2026-04-14T01:02:46Z",
-"content": "This birria recipe slowly braises beef in a rich, spiced chile sauce. You can serve it as a stew with tortillas, or go all-in and make crispy, cheesy birria tacos.\r\nBirria, a savory Mexican stew, is … [+11272 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Gagadget.com"
-},
-"author": "gagadget.com",
-"title": "Apple работает над концепцией дизайна своих первых смарт-очков с различными оправами",
-"description": "Apple работает сразу над несколькими вариантами дизайна своих первых умных очков. Об этом сообщает Bloomberg.",
-"url": "https://gagadget.com/ru/704845-apple-rabotaet-nad-kontseptsiej-dizajna-svoih-pervyih-smart-ochkov-s-razlichnyimi-opravami/",
-"urlToImage": "https://gagadget.com/media/cache/79/fa/79fa9526b288c63c71b4570a12a8b6d1.webp",
-"publishedAt": "2026-04-14T00:35:54Z",
-"content": "Apple . Bloomberg.\r\n, : Wayfarer, , , . Apple , , - -.\r\n N50 Meta, Ray-Ban. Apple .\r\n, iPhone: , , . , Siri iOS 27.\r\n , 2026 2027-, 2027 .\r\n: Bloomberg"
-},
--{
--"source": {
-"id": null,
-"name": "Ithome.com"
-},
-"author": null,
-"title": "达芬奇 DaVinci Resolve Studio 21 发布，为照片带来好莱坞级别调色工具",
-"description": "IT之家 4 月 14 日消息，当地时间 4 月 13 日，Blackmagic Design 宣布推出 DaVinci Resolve 21，这次重大更新带来了新的照片页面，官方称能让调色师和平面摄影师使用好莱坞级别的先进调色工具处理静态照片。其他更新包括新的 AI 工具，例如用于快速内容搜索的 IntelliSearch，用于焦点调整的 CineFocus 和面部精修工具等。Krokodove 工具集为 Fusion 添加了 70 多种新图文，Fairlight 文件夹简化了音频轨道管理，同时关键帧操作、Mu…",
-"url": "https://www.ithome.com/0/938/778.htm",
-"urlToImage": null,
-"publishedAt": "2026-04-14T00:56:47Z",
-"content": "IT 4 14 4 13 Blackmagic Design DaVinci Resolve 21\r\nAI IntelliSearch CineFocus \r\nKrokodove Fusion 70 Fairlight MultiMaster \r\nIT DaVinci Resolve 21 \r\n<ul><li> DaVinci Resolve\r\n</li><li> DaVinci \r\n</li>… [+759 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Newmobilelife.com"
-},
-"author": "Andy",
-"title": "【史上最低價】Apple Watch Series 11 85 折起",
-"description": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1763633293698\"} -->\n近日，Amazon 對 Apple Watch Series 11 系列全面降價，幅度高達 100 美元，Apple Watch Series 11 42mm 提供 85 折優惠，至 46mm 則有 87 折！\n<!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":524607,\"sizeSlug\":\"large\"…",
-"url": "https://www.newmobilelife.com/2026/04/14/apple-watch-series-11-discount-2/",
-"urlToImage": "https://static.newmobilelife.com/wp-content/uploads/2025/11/applewatchs11.jpg",
-"publishedAt": "2026-04-14T00:21:32Z",
-"content": "Amazon Apple Watch Series 11 100 Apple Watch Series 11 42mm 85 46mm 87 \r\nApple Watch Series 11 [GPS 42mm] Smartwatch with Space Gray Aluminum Case with Black Sport Band - S/M. Sleep Score, Fitness Tr… [+5029 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Newmobilelife.com"
-},
-"author": "Andy",
-"title": "iPhone Fold 延後量產時間　維持 2026 年秋季發佈目標",
-"description": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1776126228053\"} -->\nApple 首款摺疊智能手機 iPhone Fold 的生產進度出現變動。雖然生產階段出現約一至兩個月的延誤，但 Apple 仍計劃於 2026 年秋季正式發佈該產品，且尚未向供應商傳達任何推遲發佈的計劃。這意味著 Apple 將採取更為緊湊的生產進度，以確保這款備受市場期待的型號能如期上市。\n<!-- /wp:paragraph -->\n\n<!-…",
-"url": "https://www.newmobilelife.com/2026/04/14/iphone-fold-late-mass-production-2026/",
-"urlToImage": "https://static.newmobilelife.com/wp-content/uploads/2026/04/iphone-fold-text-2.jpg",
-"publishedAt": "2026-04-14T00:24:00Z",
-"content": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1776126228053\"} -->\nApple 首款摺疊智能手機 iPhone Fold 的生產進度出現變動。雖然生產階段出現約一至兩個月的延誤，但 Apple 仍計劃於 2026 年秋季正式發佈該產品，且尚未向供應商傳達任何推遲發佈的計劃。這意味著 Apple 將… [+1342 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Softantenna.com"
-},
-"author": "saadmin",
-"title": "Apple、iOS 26.5、iPadOS 26.5、macOS 26.5などの各beta 2を開発者向けに公開",
-"description": "Appleは本日、iOS 26.5、iPadOS 26.5、macOS 26.5、tvOS 26.5、visionOS 26.5、watchOS 26.5の各beta 2を開発者向けに公開しました(MacRumors)。 開発者向けベータ版",
-"url": "https://softantenna.com/blog/ios-26-5-beta-2/",
-"urlToImage": "https://softantenna.com/blog/wp-content/uploads/2025/06/ios26_2.jpg",
-"publishedAt": "2026-04-14T00:54:05Z",
-"content": "AppleiOS 26.5iPadOS 26.5macOS 26.5tvOS 26.5visionOS 26.5watchOS 26.5beta 2(MacRumors)\r\nApple Developer ProgramApple Beta Software Program &gt; &gt; &gt; \r\n:\r\n<table><tr><th></th><th></th><th></th></t… [+556 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "MMA Fighting"
-},
-"author": "Mike Heck",
-"title": "On To the Next One: What’s next for Carlos Ulberg, Jiri Prochazka after UFC 327?",
-"description": "Carlos Ulberg knocked out Jiri Prochazka at UFC 327",
-"url": "https://www.mmafighting.com/ufc/482397/on-to-the-next-one-whats-next-for-carlos-ulberg-jiri-prochazka-after-ufc-327",
-"urlToImage": "https://s.yimg.com/ny/api/res/1.2/7fbI6EeIrUmZkDmwoMpWeQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU7Y2Y9d2VicA--/https://media.zenfs.com/en/sb_nation_articles_115/d5644ad0dd048451f76a98d127f072e3",
-"publishedAt": "2026-04-14T00:00:00Z",
-"content": "Carlos Ulberg captured the UFC light heavyweight title with a stunning knockout over Jiri Prochazka in the UFC 327 main event. What made it so remarkable was the fact that Ulberg was badly injured, l… [+1059 chars]"
-},
--{
--"source": {
-"id": "usa-today",
-"name": "USA Today"
-},
-"author": "Jess Root, Cardinals Wire",
-"title": "2026 NFL draft: Arizona Cardinals 1 of several teams wishing to trade back",
-"description": "One analyst says everyone from No. 3 to No. 7 overall wants to trade back.",
-"url": "https://cardswire.usatoday.com/story/sports/nfl/cardinals/2026/04/13/2026-nfl-draft-arizona-cardinals-1-of-several-teams-wishing-to-trade-back/89599027007/",
-"urlToImage": "https://s.yimg.com/ny/api/res/1.2/B8U9nPNCQIFKAEwgNEWdAA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03ODY7Y2Y9d2VicA--/https://media.zenfs.com/en/arizona_cardinals_wire_usa_today_sports_articles_662/5345c58b1520cc5ab3b210db17e2cb10",
-"publishedAt": "2026-04-14T00:11:08Z",
-"content": "The Arizona Cardinals hold the third overall pick in the 2026 NFL draft, just as they did in 2023. They are apparently trying to do what they did in 2023 as well.\r\nIt has been known for a bit that th… [+1444 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Yahoo Entertainment"
-},
-"author": null,
-"title": "蘋果前AI負責人John Giannandrea本週正式離職，揭開內部高層核心圈排外文化",
-"description": "彭博新聞記者Mark Gurman指出，蘋果前人工智慧負責人John Giannandrea即將在本週正式結束其在蘋果職涯。這位曾被寄予厚望、從Google挖角而來的AI大將，在歷經Apple Intelligence發表初期的波折，以及Siri升級持續延宕後，其權力早已被逐步架空。而John Giannandrea的離去，不僅象徵蘋果AI發展進入下一個階段...",
-"url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_d0d866e0-8cac-4ec8-abab-8455520fb39a",
-"urlToImage": null,
-"publishedAt": "2026-04-14T00:00:52Z",
-"content": "If you click 'Accept all', we and our partners, including 251 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+1045 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Alltoc.com"
-},
-"author": "AllToc",
-"title": "What’s Apple doing with AI smart glasses frames? #tech",
-"description": "Apple tests multiple frame styles for AI smart glasses Apple is developing display free AI smart glasses intended to rival Meta’s Ray Ban style glasses, with Bloomberg reporting that the company is testing at least four different frame designs . The prototype…",
-"url": "https://alltoc.com/tech/whats-apple-doing-with-ai-smart-glasses-frames",
-"urlToImage": "https://alltoc.com/cdn/1046/og.png",
-"publishedAt": "2026-04-14T00:01:59Z",
-"content": "Apple tests multiple frame styles for AI smart glasses\r\nApple is developing display-free AI smart glasses intended to rival Metas Ray-Ban-style glasses, with Bloomberg reporting that the company is t… [+1965 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "pymnts.com"
-},
-"author": "PYMNTS",
-"title": "Banks Face Complex Cyber Risks From Anthropic’s Mythos",
-"description": "Anthropic’s new artificial intelligence (AI) model Mythos poses a significant threat to the banking industry, as it could expose legacy systems to “unprecedented cyber risks,” Reuters reported Monday (April 13). Experts interviewed by Reuters said Mythos coul…",
-"url": "https://www.pymnts.com/cybersecurity/2026/banks-face-complex-cyber-risks-from-anthropics-mythos/",
-"urlToImage": "https://www.pymnts.com/wp-content/uploads/2026/04/Anthropic-Mythos.jpeg",
-"publishedAt": "2026-04-14T00:02:08Z",
-"content": "Anthropics new artificial intelligence (AI) model Mythos poses a significant threat to the banking industry, as it could expose legacy systems to unprecedented cyber risks, Reuters reported Monday (A… [+2222 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Livedoor.biz"
-},
-"author": "vintagecomp",
-"title": "Apple、Keynote 14, Numbers 14, Pages 14 の提供を終了",
-"description": "お宝さんに、出ていました。Mac用アプリ「Keynote 14.5」「Numbers 14.5」「Pages 14.5」の提供を終了しています。有料サブスクのApple Creator Studioに「Keynote 15」「Numbers 15」「Pages 15」が含まれていますが、従来通りバージョン14.5は無料で提供されていました。こ...",
-"url": "https://vintagecomp.livedoor.biz/archives/52063885.html",
-"urlToImage": "https://parts.blog.livedoor.jp/img/usr/cmn/ogp_image/livedoor.png",
-"publishedAt": "2026-04-14T00:58:04Z",
-"content": "Apple Creator StudioKeynote 15Numbers 15Pages 1514.514.5OSMacMacBook Neo Mac MS Office ProApple Creator Studio\r\nMaciMovieGarageband ProApple Creator Studio"
-},
--{
--"source": {
-"id": null,
-"name": "ZDNet"
-},
-"author": "Kayla Solino",
-"title": "I followed the 'Plus 5' rule for wireless charging, and it fixed my iPhone's charge speeds",
-"description": "Wireless charging is a helpful feature, but you may be getting the top speed with your accessories. Here's what to check for.",
-"url": "https://www.zdnet.com/article/plus-five-wireless-charging-rule-iphone-android-faster-speeds/",
-"urlToImage": "https://www.zdnet.com/a/img/resize/a3a8e5c4d4b94f2fca6731e67689ba1f2e564235/2024/08/22/4a6720fe-c885-4445-836b-48cf82b94b2a/img-1916.jpg?auto=webp&fit=crop&height=675&width=1200",
-"publishedAt": "2026-04-14T01:00:41Z",
-"content": "Kayla Solino/ZDNET\r\nFollow ZDNET: Add us as a preferred source on Google.\r\nZDNET's key takeaways \r\n<ul><li>It's easy to reduce the efficiency of a wireless charger without realizing it. </li><li>Prop… [+4689 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "PhoneArena"
-},
-"author": "Abdullah Asim",
-"title": "Apple sets its sights higher for MacBook Neo, the little laptop that could",
-"description": "The MacBook Neo came as a surprise, both to consumers and to Apple.",
-"url": "https://www.phonearena.com/news/apple-sets-sights-higher-for-macbook-neo_id179638",
-"urlToImage": "https://m-cdn.phonearena.com/images/article/179638-wide-two_1200/Apple-sets-its-sights-higher-for-MacBook-Neo-the-little-laptop-that-could.jpg",
-"publishedAt": "2026-04-14T00:00:45Z",
-"content": "What makes the MacBook Neo so popular is the fact that it is such a major departure from Apples usual approach to its laptops.The MacBook Air and the MacBook Pro have remained expensive, professional… [+1448 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Pypi.org"
-},
-"author": null,
-"title": "superdoc-sdk-cli-darwin-arm64 1.6.0.dev11",
-"description": "SuperDoc CLI binary for macOS ARM64 (Apple Silicon)",
-"url": "https://pypi.org/project/superdoc-sdk-cli-darwin-arm64/1.6.0.dev11/",
-"urlToImage": null,
-"publishedAt": "2026-04-14T00:24:43Z",
-"content": "A required part of this site couldnt load. This may be due to a browser\r\n extension, network issues, or browser settings. Please check your\r\n connection, disable any ad blockers, or try using a diffe… [+12 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "CNET"
-},
-"author": null,
-"title": "Tenorshare Co., Ltd.アンインストールしたLINEは復元できる？トーク履歴・友だちを復活させる方法",
-"description": "Tenorshare社が提供しているLINEデータ復元ソフト「UltData LINE Recovery」最新バージョンは4月14日（火）発表されました。今回のアップデートでは、Googleドライブのバグを修復しました。★UltData LINE Recovery公式サイト：https://x.gd/pn4rW「LINEを間違ってアンインストールしてしまった…」「トーク履歴や写真はも...",
-"url": "https://japan.cnet.com/release/31161071/",
-"urlToImage": "https://japan.cnet.com/media/c/2012/images/logo/logo_ogp_1200.png",
-"publishedAt": "2026-04-14T00:00:00Z",
-"content": "TenorshareLINEUltData LINE Recovery414Google\r\nUltData LINE Recovery\r\nLINELINE\r\nLINE\r\nPart1.LINE\r\nLINELINE\r\n: LINE Pay: \r\nLINE\r\nPart2.LINE\r\nLINE\r\n1.: 2.: Apple IDGoogle3.: \r\nPart3.LINE\r\n2\r\n1LINEiPhone… [+363 chars]"
-},
--{
--"source": {
-"id": null,
-"name": "Applelinkage.com"
-},
-"author": "Al",
-"title": "Apple、iWork版「Keynote」「Numbers」「Pages」の提供を終了",
-"description": "Apple Inc.が、iWork版「Keynote」「Numbers」「Pages」の提供を終了しています。 Appleは今年1月よりApple Creator Studio版のKeynote、Numbers、Page … 続きを読む Apple、iWork版「Keynote」「Numbers」「Pages」の提供を終了 →",
-"url": "https://www.applelinkage.com/2026/04/14/apple-discontinues-iwork-versions-of-pages-numbers-keynote/",
-"urlToImage": null,
-"publishedAt": "2026-04-14T01:07:07Z",
-"content": "Apple Inc.iWorkKeynoteNumbersPages\r\nApple1Apple Creator StudioKeynoteNumbersPagesApp StoreApp StoreiWork14Creator Studio15\r\niWorkApp Store"
+  "status": 400,
+  "success": false,
+  "error": {
+    "code": "BAD_REQUEST",
+    "message": "Description of what went wrong"
+  }
 }
-]
-}
-Get the current top headlines for a country or category
-News API is great as a data source for news tickers and other applications where you want to show your users live headlines. We track headlines in 7 categories across over 50 countries, and at over a hundred top publications and blogs, in near real time.
+Status	Meaning
+400	Invalid parameters or malformed request
+401	Missing or invalid API key
+402	Insufficient pollen balance
+403	API key lacks required permission
+500	Internal server error
+Server
+Server:
+https://gen.pollinations.ai
 
-Let's make a request to get live top headlines in the US right now. We'll use the /top-headlines endpoint for this.
+Authentication
+Required
+Selected Auth Type:bearerAuth
+API key from enter.pollinations.ai
+Bearer Token
+:
+Token
+Show Password
+Client Libraries
+Shell Curl
+✍️ Text Generation ​Copy link
+Generate text responses using AI models. Fully compatible with the OpenAI Chat Completions API — use any OpenAI SDK by changing the base URL.
 
-This returns a JSON object with the results in an array we can iterate over.
+Endpoint	Best for
+POST /v1/chat/completions	Full OpenAI compatibility — streaming, tools, vision, structured outputs
+GET /text/{prompt}	Quick prototyping — simple GET, returns plain text
+Capabilities vary by model: streaming, function calling, vision, structured JSON, reasoning, web search. See /text/models for per-model details.
 
-For more information about the /top-headlines endpoint, including valid parameters for focusing on specific countries and categories, see the Top Headlines endpoint reference.
+✍️ Text GenerationOperations
+post
+/v1/chat/completions
+get
+/text/{prompt}
+Chat Completions​Copy link
+Generate text responses using AI models. Fully compatible with the OpenAI Chat Completions API — use any OpenAI SDK by pointing it to https://gen.pollinations.ai.
 
-Definition
-GET https://newsapi.org/v2/top-headlines?country=us&apiKey=API_KEY
-Example request
-curl https://newsapi.org/v2/top-headlines -G \
-    -d country=us \
-    -d apiKey=d2605752c905432aa5a0bffbc1ed5f6b
-Example response
+Supports streaming, function calling, vision (image input), structured outputs, and reasoning/thinking modes depending on the model.
+
+Body
+application/json
+messagesCopy link to messages
+Type:array
+required
+Show Child Attributesfor messages
+audioCopy link to audio
+Type:object
+Show Child Attributesfor audio
+frequency_penaltyCopy link to frequency_penalty
+Type:number
+min:  
+-2
+max:  
+2
+nullable
+Default
+function_callCopy link to function_call
+
+Any of
+string
+Type:string
+enum
+values
+none
+auto
+functionsCopy link to functions
+Type:array object[]
+1…128
+Show Child Attributesfor functions
+logit_biasCopy link to logit_bias
+Type:object
+nullable
+Default
+Show Child Attributesfor logit_bias
+logprobsCopy link to logprobs
+Type:boolean
+nullable
+Default
+max_tokensCopy link to max_tokens
+Type:integer
+min:  
+0
+max:  
+9007199254740991
+nullable
+Integer numbers.
+
+modalitiesCopy link to modalities
+Type:array string[]
+enum
+values
+text
+audio
+modelCopy link to model
+Type:string
+Default
+AI model for text generation. See /v1/models for full list.
+
+parallel_tool_callsCopy link to parallel_tool_calls
+Type:boolean
+Default
+presence_penaltyCopy link to presence_penalty
+Type:number
+min:  
+-2
+max:  
+2
+nullable
+Default
+Show additional propertiesfor Request Body
+Responses
+
+200
+Success
+application/json
+
+400
+Something was wrong with the input data, check the details for more info.
+application/json
+
+401
+Authentication required. Please provide an API key via Authorization header (Bearer token) or ?key= query parameter.
+application/json
+
+402
+Insufficient pollen balance or API key budget exhausted.
+application/json
+
+403
+Access denied! You don't have the required permissions for this resource or model.
+application/json
+
+429
+You're making requests too quickly. Please slow down a bit.
+application/json
+
+500
+Oh snap, something went wrong on our end. We're on it!
+application/json
+Request Example forpost/v1/chat/completions
+cURL
+curl https://gen.pollinations.ai/v1/chat/completions \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openai",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+
+
+Test Request
+(post /v1/chat/completions)
+Status:200
+Status:400
+Status:401
+Status:402
+Status:403
+Status:429
+Status:500
+
 {
-"status": "ok",
-"totalResults": 36,
--"articles": [
--{
--"source": {
-"id": "espn",
-"name": "ESPN"
-},
-"author": null,
-"title": "Wings select UConn's Azzi Fudd No. 1 in 2026 WNBA draft - ESPN",
-"description": "Azzi Fudd is on her way to Dallas as the No. 1 pick in the WNBA draft with a $500,000 payday waiting for the former UConn star. Minnesota took Olivia Miles of TCU with the No. 2 pick.",
+  "id": "chatcmpl-abc123",
+  "object": "chat.completion",
+  "created": 1700000000,
+  "model": "openai",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hello! How can I help you today?"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 10,
+    "completion_tokens": 12,
+    "total_tokens": 22
+  }
+}
+
+Success
+
+Simple Text Generation​Copy link
+Generate text from a prompt via a simple GET request. Returns plain text.
+
+This is a simplified alternative to the OpenAI-compatible /v1/chat/completions endpoint — ideal for quick prototyping or simple integrations.
+
+Path Parameters
+promptCopy link to prompt
+Type:string
+min length:  
+1
+required
+Example
+Text prompt for generation
+
+Query Parameters
+modelCopy link to model
+Type:string
+enum
+Default
+Text model to use. See /v1/models or /text/models for the full list of available models.
+
+values
+openai
+openai-fast
+openai-large
+qwen-coder
+mistral
+Show all values
+seedCopy link to seed
+Type:integer
+min:  
+-1
+max:  
+9007199254740991
+Default
+Seed for reproducible results. Use -1 for random.
+
+systemCopy link to system
+Type:string
+System prompt to set the model's behavior and context. Acts as initial instructions before the user prompt.
+
+jsonCopy link to json
+Type:boolean
+Default
+When true, the model returns valid JSON. Useful for structured data extraction.
+
+temperatureCopy link to temperature
+Type:number
+Controls randomness. Lower values (e.g. 0.2) produce more focused output, higher values (e.g. 1.5) produce more creative output. Range: 0.0 to 2.0.
+
+streamCopy link to stream
+Type:boolean
+Default
+Stream the response as it's generated, using Server-Sent Events (SSE). Each chunk contains partial text.
+
+Responses
+
+200
+Generated text response
+text/plain
+
+400
+Something was wrong with the input data, check the details for more info.
+application/json
+
+401
+Authentication required. Please provide an API key via Authorization header (Bearer token) or ?key= query parameter.
+application/json
+
+402
+Insufficient pollen balance or API key budget exhausted.
+application/json
+
+403
+Access denied! You don't have the required permissions for this resource or model.
+application/json
+
+429
+You're making requests too quickly. Please slow down a bit.
+application/json
+
+500
+Oh snap, something went wrong on our end. We're on it!
+application/json
+Request Example forget/text/{prompt}
+cURL
+curl "https://gen.pollinations.ai/text/Write%20a%20haiku?model=openai" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+
+
+Test Request
+(get /text/{prompt})
+Status:200
+Status:400
+Status:401
+Status:402
+Status:403
+Status:429
+Status:500
+string
+
+Generated text response
+
+🖼️ Image Generation (Collapsed)​Copy link
+Generate images from text prompts via a simple GET request. Returns JPEG or PNG.
+
+Quick start — paste in your browser, no code needed:
+
+https://gen.pollinations.ai/image/a%20cat%20in%20space?model=flux
+Available models: kontext, nanobanana, nanobanana-2, nanobanana-pro, seedream5, seedream, seedream-pro, gptimage, gptimage-large, flux, zimage, wan-image, wan-image-pro, qwen-image, grok-imagine, grok-imagine-pro, klein, p-image, p-image-edit, nova-canvas
+
+Key parameters: model, width, height, seed, enhance, negative_prompt, image (for editing), quality, transparent
+
+OpenAI SDK: Also available via POST /v1/images/generations and POST /v1/images/edits — use any OpenAI SDK with base_url="https://gen.pollinations.ai/v1".
+
+🖼️ Image GenerationOperations
+get
+/image/{prompt}
+post
+/v1/images/generations
+post
+/v1/images/edits
+Show More
+🎬 Video Generation (Collapsed)​Copy link
+Generate videos from text prompts or reference images. Returns MP4.
+
+https://gen.pollinations.ai/video/sunset%20timelapse?model=veo&duration=4
+Available models: veo, seedance, seedance-pro, wan, wan-fast, grok-video-pro, ltx-2, p-video, nova-reel
+
+Video parameters: duration (seconds), aspectRatio (16:9 or 9:16), audio (enable soundtrack), image (reference frames)
+
+🎬 Video GenerationOperations
+get
+/video/{prompt}
+Show More
+🔊 Audio Generation (Collapsed)​Copy link
+Text-to-speech, music generation, and audio transcription.
+
+Endpoint	Description
+GET /audio/{text}	Simple URL-based TTS or music generation
+POST /v1/audio/speech	OpenAI-compatible TTS
+POST /v1/audio/transcriptions	Speech-to-text transcription
+Available voices: alloy, echo, fable, onyx, nova, shimmer, ash, ballad, coral, sage, verse, rachel, domi, bella, elli, charlotte, dorothy, sarah, emily, lily, matilda, adam, antoni, arnold, josh, sam, daniel, charlie, james, fin, callum, liam, george, brian, bill
+
+🔊 Audio GenerationOperations
+get
+/audio/{text}
+post
+/v1/audio/speech
+post
+/v1/audio/transcriptions
+Show More
+🤖 Models ​Copy link
+Discover available models with pricing, capabilities, and metadata. No authentication required.
+
+Endpoint	Returns
+GET /v1/models	Text models in OpenAI format ({object: "list", data: [...]})
+GET /text/models	Text models with pricing, context window, tool support
+GET /image/models	Image & video models with capabilities and pricing
+GET /audio/models	Audio models with supported voices
+🤖 ModelsOperations
+get
+/v1/models
+get
+/image/models
+get
+/text/models
+get
+/audio/models
+List Models (OpenAI-compatible)​Copy link
+Returns available models (text, image, audio) in the OpenAI-compatible format ({object: "list", data: [...]}). Use this endpoint if you're using an OpenAI SDK. For richer metadata including pricing and capabilities, use /text/models, /image/models, or /audio/models instead. When authenticated: models are filtered by API key permissions, and paid_only models are hidden if the account has no paid balance.
+
+Responses
+
+200
+Success
+application/json
+
+500
+Oh snap, something went wrong on our end. We're on it!
+application/json
+Request Example forget/v1/models
+cURL
+curl https://gen.pollinations.ai/v1/models
+
+
+Test Request
+(get /v1/models)
+Status:200
+Status:500
+
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "openai",
+      "object": "model",
+      "created": 1700000000,
+      "owned_by": "pollinations"
+    },
+    {
+      "id": "claude",
+      "object": "model",
+      "created": 1700000000,
+      "owned_by": "pollinations"
+    },
+    {
+      "id": "gemini",
+      "object": "model",
+      "created": 1700000000,
+      "owned_by": "pollinations"
+    }
+  ]
+}
+
+Success
+
+List Image & Video Models​Copy link
+Returns all available image and video generation models with pricing, capabilities, and metadata. Video models are included here — check the outputModalities field to distinguish image vs video models. When authenticated: models are filtered by API key permissions, and paid_only models are hidden if the account has no paid balance.
+
+Responses
+
+200
+Success
+application/json
+
+500
+Oh snap, something went wrong on our end. We're on it!
+application/json
+Request Example forget/image/models
+cURL
+curl https://gen.pollinations.ai/image/models
+
+
+Test Request
+(get /image/models)
+Status:200
+Status:500
+[]
+
+Success
+
+List Text Models (Detailed)​Copy link
+Returns all available text generation models with pricing, capabilities, and metadata including context window size, supported modalities, and tool support. When authenticated: models are filtered by API key permissions, and paid_only models are hidden if the account has no paid balance.
+
+Responses
+
+200
+Success
+application/json
+
+500
+Oh snap, something went wrong on our end. We're on it!
+application/json
+Request Example forget/text/models
+cURL
+curl https://gen.pollinations.ai/text/models
+
+
+Test Request
+(get /text/models)
+Status:200
+Status:500
+[]
+
+Success
+
+List Audio Models​Copy link
+Returns all available audio models (text-to-speech, music generation, and transcription) with pricing, capabilities, and metadata. When authenticated: models are filtered by API key permissions, and paid_only models are hidden if the account has no paid balance.
+
+Responses
+
+200
+Success
+application/json
+
+500
+Oh snap, something went wrong on our end. We're on it!
+application/json
+Request Example forget/audio/models
+cURL
+curl https://gen.pollinations.ai/audio/models
+
+
+Test Request
+(get /audio/models)
+Status:200
+Status:500
+[]
+
+Success
+
+👤 Account ​Copy link
+Manage your account, check your pollen balance, and view usage history. All endpoints require authentication.
+
+Endpoint	Description
+GET /account/profile	Name, email, tier, creation date
+GET /account/balance	Current pollen balance
+GET /account/usage	Per-request history with costs
+GET /account/usage/daily	Daily aggregated usage for dashboards
+GET /account/key	API key validity, type, and permissions
+When using API keys, specific permissions may be required (e.g., account:balance, account:usage).
+
+👤 AccountOperations
+get
+/account/profile
+get
+/account/balance
+get
+/account/usage
+get
+/account/usage/daily
+get
+/account/keys
+post
+/account/keys
+delete
+/account/keys/{id}
+get
+/account/key
+Get Profile​Copy link
+Returns your account profile including name, email, tier level, and account creation date. Requires account:profile permission when using API keys.
+
+Responses
+
+200
+User profile
+application/json
+401
+Unauthorized
+
+403
+Permission denied - API key missing account:profile permission
+Request Example forget/account/profile
+cURL
+curl https://gen.pollinations.ai/account/profile \
+  -H "Authorization: Bearer YOUR_API_KEY"
+
+
+Test Request
+(get /account/profile)
+Status:200
+Status:401
+Status:403
+
+{
+  "name": "Jane Developer",
+  "email": "jane@example.com",
+  "githubUsername": "janedeveloper",
+  "image": "https://avatars.example.com/jane.jpg",
+  "tier": "seed",
+  "displayTier": "Seed",
+  "createdAt": "2024-01-15T10:30:00.000Z",
+  "nextResetAt": "2024-02-15T14:00:00.000Z"
+}
+
+User profile
+
+Get Balance​Copy link
+Returns your current pollen balance. If the API key has a budget limit, returns the key's remaining budget instead. Requires account:balance permission when using API keys.
+
+Responses
+
+200
+Pollen balance
+application/json
+401
+Unauthorized
+
+403
+Permission denied - API key missing account:balance permission
+Request Example forget/account/balance
+cURL
+curl https://gen.pollinations.ai/account/balance \
+  -H "Authorization: Bearer YOUR_API_KEY"
+
+
+Test Request
+(get /account/balance)
+Status:200
+Status:401
+Status:403
+
+{
+  "balance": 42.5
+}
+
+Pollen balance
+
+Get Usage History​Copy link
+Returns your request history with per-request details: model used, token counts, cost, and response time. Defaults to the last 30 days, supports up to 90 days via days, and supports JSON and CSV export. Each response is capped at 50,000 rows. Use before for cursor-based pagination. Requires account:usage permission when using API keys.
+
+Query Parameters
+formatCopy link to format
+Type:string
+enum
+Default
+values
+json
+csv
+limitCopy link to limit
+Type:number
+min:  
+1
+max:  
+50000
+Default
+beforeCopy link to before
+Type:string
+daysCopy link to days
+Type:integer
+min:  
+1
+max:  
+90
+Default
+Integer numbers.
+
+Responses
+
+200
+Usage records
+application/json
+401
+Unauthorized
+
+403
+Permission denied - API key missing account:usage permission
+Request Example forget/account/usage
+cURL
+# Get usage history (JSON)
+curl "https://gen.pollinations.ai/account/usage?limit=10" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+
+# Export the latest 50,000 rows from the last 30 days as CSV
+curl "https://gen.pollinations.ai/account/usage?format=csv&days=30&limit=50000" \
+  -H "Authorization: Bearer YOUR_API_KEY" -o usage.csv
+
+
+Test Request
+(get /account/usage)
+Status:200
+Status:401
+Status:403
+{
+  "usage": [
+    {
+      "timestamp": "string",
+      "type": "string",
+      "model": "string",
+      "api_key": "string",
+      "api_key_type": "string",
+      "meter_source": "string",
+      "input_text_tokens": 1,
+      "input_cached_tokens": 1,
+      "input_audio_tokens": 1,
+      "input_image_tokens": 1,
+      "output_text_tokens": 1,
+      "output_reasoning_tokens": 1,
+      "output_audio_tokens": 1,
+      "output_image_tokens": 1,
+      "cost_usd": 1,
+      "response_time_ms": 1
+    }
+  ],
+  "count": 1
+}
+
+Usage records
+
+Get Daily Usage​Copy link
+Returns daily aggregated usage for the requested time window (max 90 days), grouped by date and model. Useful for dashboards and spending analysis. Supports JSON and CSV export. Results are cached for 1 hour. Requires account:usage permission when using API keys.
+
+Query Parameters
+formatCopy link to format
+Type:string
+enum
+Default
+values
+json
+csv
+daysCopy link to days
+Type:integer
+min:  
+1
+max:  
+90
+Default
+Integer numbers.
+
+api_key_idsCopy link to api_key_ids
+Type:string
+Responses
+
+200
+Daily usage records aggregated by date/model
+application/json
+401
+Unauthorized
+
+403
+Permission denied - API key missing account:usage permission
+Request Example forget/account/usage/daily
+cURL
+curl "https://gen.pollinations.ai/account/usage/daily?days=30" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+
+
+Test Request
+(get /account/usage/daily)
+Status:200
+Status:401
+Status:403
+{
+  "usage": [
+    {
+      "date": "string",
+      "model": "string",
+      "meter_source": "string",
+      "requests": 1,
+      "cost_usd": 1
+    }
+  ],
+  "count": 1
+}
+
+Daily usage records aggregated by date/model
+
+List API Keys​Copy link
+List all API keys for the current user. Requires account:keys permission when using API keys. Secret key values are never returned.
+
+Responses
+200
+List of API keys
+401
+Unauthorized
+403
+Permission denied
+Request Example forget/account/keys
+Shell Curl
+curl https://gen.pollinations.ai/account/keys \
+  --header 'Authorization: Bearer YOUR_SECRET_TOKEN'
+
+
+Test Request
+(get /account/keys)
+Status:200
+Status:401
+Status:403
+No Body
+List of API keys
+
+Create API Key​Copy link
+Create a new API key. Requires account:keys permission and a secret key (sk_). The full key value is returned only once in the response. The keys account permission is automatically stripped from child keys to prevent escalation.
+
+Body
+application/json
+nameCopy link to name
+Type:string
+min length:  
+1
+max length:  
+253
+required
+Name for the API key
+
+accountPermissionsCopy link to accountPermissions
+Type:array string[] | null
+nullable
+Account permissions (e.g. ["balance", "usage"]). "keys" is auto-stripped.
+
+allowedModelsCopy link to allowedModels
+Type:array string[] | null
+nullable
+Model IDs this key can access. null = all models
+
+expiresInCopy link to expiresIn
+Type:integer
+greater than:  
+0
+max:  
+31536000
+Expiry in seconds from now (max 365 days)
+
+pollenBudgetCopy link to pollenBudget
+Type:number
+nullable
+Pollen budget cap. null = unlimited
+
+typeCopy link to type
+Type:string
+enum
+Default
+Key type: secret (sk_) or publishable (pk_)
+
+values
+secret
+publishable
+Responses
+200
+Created API key with full secret
+401
+Unauthorized
+403
+Permission denied or publishable key
+Request Example forpost/account/keys
+Shell Curl
+curl https://gen.pollinations.ai/account/keys \
+  --request POST \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer YOUR_SECRET_TOKEN' \
+  --data '{
+  "name": "",
+  "type": "secret",
+  "expiresIn": 1,
+  "allowedModels": [
+    ""
+  ],
+  "pollenBudget": 1,
+  "accountPermissions": [
+    ""
+  ]
+}'
+
+
+Test Request
+(post /account/keys)
+Status:200
+Status:401
+Status:403
+No Body
+Created API key with full secret
+
+📦 Media Storage (Collapsed)​Copy link
+Content-addressed media storage. Upload and retrieve images, audio, and video by content hash.
+
+Endpoint	Description
+POST /upload	Upload a file, receive a content-addressed URL
+GET /{hash}	Retrieve a previously uploaded file
+GET /{hash}/metadata	Get file metadata (size, type, dimensions)
+Base URL: media.pollinations.ai
+
+📦 Media StorageOperations
+post
+/upload
+get
+/{hash}
+head
+/{hash}
+delete
+/{hash}
+Show More
+🌸 Bring Your Own Pollen (Collapsed)​Copy link
+🌼 Bring Your Own Pollen (BYOP)
+Your users pay for their own AI usage. You pay $0.
+
+🔄 How It Works
+User connects — via your web app or CLI
+Signs in, creates a scoped API key
+Their pollen, your app
+Why this is good:
+
+💸 $0 costs — scales to any number of users without costing you a cent
+🔑 No key management — the auth flow handles it
+⚖️ Self-regulating — everyone pays for what they use
+🌐 Works everywhere — web apps, CLIs, MCP servers, anything
+Both flows land on the same authorize screen where users set model restrictions, budget, and expiry. Same key, same pollen, different entry point.
+
+🗝️ App Key
+An App Key is a publishable key (pk_...) you create on enter.pollinations.ai specifically for BYOP. It's optional but strongly recommended:
+
+Without App Key	With App Key
+Consent screen shows generic hostname	Consent screen shows your app name + your GitHub
+No traffic attribution	Traffic your app drives is tracked to your account
+No tier benefit	Real usage → automatic tier upgrades → higher pollen grants
+To create one, go to enter.pollinations.ai → Create New App Key:
+
+Create New App Key
+
+Set the Name (shows on the consent screen) and App URL (your app's domain). The key you get back is your client_id (a pk_... publishable key; the legacy name app_key is still accepted).
+
+When users authorize, this is what they see:
+
+Authorize Screen
+
+⚙️ Web Apps (Redirect Flow)
+1. Build the Auth Link
+With client_id (consent screen shows your app name + your GitHub):
+
+https://enter.pollinations.ai/authorize?redirect_uri=https://myapp.com&client_id=pk_yourkey
+Without (still works, just shows the hostname):
+
+https://enter.pollinations.ai/authorize?redirect_uri=https://myapp.com
+With restrictions:
+
+https://enter.pollinations.ai/authorize?redirect_uri=https://myapp.com&client_id=pk_yourkey&scope=usage&models=flux,openai&expiry=7&budget=10
+Param	What it does	Example
+client_id	Your publishable key — shows app name + author on consent screen, tracks traffic for tier upgrades	pk_abc123
+redirect_uri	Where users return after authorizing — receives the temp API key in the URL fragment	https://myapp.com
+state	Opaque value echoed back on the callback for CSRF protection	any-random-string
+scope	Account access (space or comma separated)	usage keys
+models	Restrict to specific models	flux,openai,gptimage
+budget	Pollen cap	10
+expiry	Key lifetime in days (default: 30)	7
+Legacy names app_key, redirect_url, and permissions are still accepted for backwards compatibility.
+
+2. Handle the Redirect
+User comes back with a key in the URL fragment:
+
+https://myapp.com#api_key=sk_abc123xyz
+Fragment, not query param — never hits server logs. 🔒 If you passed state, it's echoed back: #api_key=sk_...&state=.... On denial the fragment is #error=access_denied&state=....
+
+💻 Code
+// Send user to auth
+const params = new URLSearchParams({
+  redirect_uri: location.href,
+  client_id: 'pk_yourkey', // optional — shows app name + author
+});
+window.location.href = `https://enter.pollinations.ai/authorize?${params}`;
+
+// Grab key from URL after redirect
+const apiKey = new URLSearchParams(location.hash.slice(1)).get('api_key');
+
+// Use their pollen
+fetch('https://gen.pollinations.ai/v1/chat/completions', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+  body: JSON.stringify({ model: 'openai', messages: [{ role: 'user', content: 'yo' }] })
+});
+🖥️ CLIs & Headless Apps (Device Flow)
+Same authorize screen, but the user opens a browser separately. Your CLI polls for the key.
+
+Where this fits:
+
+Discord / Telegram / WhatsApp bots — bot DMs the code, user approves in browser, bot gets their key
+CLI tools — pollinations login opens a browser, CLI waits for approval
+MCP servers — AI agent requests access, user approves from their browser
+Raspberry Pi / IoT — headless device displays a code, user approves on their phone
+VS Code extensions — extension shows the code, user approves in browser
+# 1. request a device code (pass your app_key as client_id for attribution)
+curl -X POST https://enter.pollinations.ai/api/device/code \
+  -H 'Content-Type: application/json' \
+  -d '{"client_id": "pk_yourkey", "scope": "generate"}'
+# → { "device_code": "...", "user_code": "ABCD-1234", "verification_uri": "/device" }
+
+# 2. tell user: "go to enter.pollinations.ai/device and enter ABCD-1234"
+
+# 3. poll for the key (every 5s)
+curl -X POST https://enter.pollinations.ai/api/device/token \
+  -H 'Content-Type: application/json' \
+  -d '{"device_code": "..."}'
+# pending → { "error": "authorization_pending" }
+# done    → { "access_token": "sk_...", "token_type": "bearer", "scope": "generate" }
+👤 Who's Using This Key?
+Once you have a key, you can check who it belongs to:
+
+curl https://enter.pollinations.ai/api/device/userinfo \
+  -H 'Authorization: Bearer sk_...'
+# → { "sub": "user-id", "name": "Thomas", "preferred_username": "voodoohop", "email": "...", "picture": "..." }
+Standard OIDC userinfo shape — works with any sk_ or pk_ key.
+
+🕐 Keys expire in 30 days. Users can revoke anytime from the dashboard.
+
+edit this doc · h/t Puter.js for the idea
+
+Copied to clipboard!Copy for LLMs
